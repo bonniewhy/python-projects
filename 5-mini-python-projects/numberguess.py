@@ -25,16 +25,24 @@ import random
 import time
 
 def main():
-    player_name = input("Hello! What is your name?")
+    player_name = input("Hello! What is your name? ")
+    
+    # Give the computer a few seconds to "think" and make a response.
+    time.sleep(0.5)
     print("Nice to meet you," + player_name + "!")
 
     computer_number = random.randint(1, 20)
+    # The computer is "thinking" of a number.
+    time.sleep(2)
     print("I'm thinking of a number between 1 and 20.")
+    time.sleep(0.5)
+    print("You have seven tries to guess.")
 
     num = 0
 
-    while num < 8:
-        number_guess = int(input("What do you think it is?"))
+    while num < 7:
+        time.sleep(1)
+        number_guess = int(input("What do you think it is? "))
         if number_guess > computer_number:
             print("Too high! Try again, please!")
             num += 1
@@ -44,9 +52,6 @@ def main():
         else:
             print("Good Guess! You win!")
             break
-
-    
-
 
 if __name__ == "__main__":
     main()
