@@ -18,6 +18,7 @@
 #       conecepts used in this project aren't completely foreign to you. Print, for example, is
 #       similar to Javascript's "console.log".
 import random
+import time
 
 def dice_roll(sides):
     roll = random.randint(1, sides)
@@ -27,14 +28,16 @@ def main():
     choice = 1
     while choice == 1:
         print("ROLL THE DICE!")
+        time.sleep(0.5)
         sides = input("How many sides should this dice have? ")
         sides = int(sides)
 
+        time.sleep(0.5)
+        print("Rolling...")
+        time.sleep(1)
         print("You rolled " + dice_roll(sides) + ". Roll again?")
         choice = input("1 for YES; 2 for NO! ")
         choice = int(choice)
-
-
 
 if __name__ == "__main__":
     main()
